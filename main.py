@@ -10,12 +10,12 @@ db: List[User] = [
     User(id=uuid4(),
          first_name="Mila",
          last_name="Py",
-         gender= Gender.female,
-         role= [Role.user]),
+         gender=Gender.female,
+         role=[Role.user]),
     User(id=uuid4(),
          first_name="James",
          last_name="Jones",
-         gender= Gender.male,
+         gender=Gender.male,
          role=[Role.admin]
     )
 ]
@@ -30,10 +30,12 @@ async def root():
 async def fetch_users():
     return db
 
+
 @app.post('/api/v1/users')
 async def register_users(user: User):
     db.append(user)
     return {"id": user.id}
+
 
 @app.delete('/api/v1/users/{user_id}')
 async def delete_user(user_id: UUID):
