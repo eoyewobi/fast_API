@@ -19,4 +19,10 @@ class User(BaseModel):
     first_name: str
     last_name: str
     gender: Gender
-    role: List[Role]
+    roles: List[Role]
+
+
+class ChangeUser(BaseModel):
+    first_name: Optional[str]
+    last_name: Optional[str]
+    roles: Optional[List[Role]]
