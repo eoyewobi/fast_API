@@ -11,13 +11,14 @@ db: List[User] = [
          first_name="Mila",
          last_name="Py",
          gender=Gender.female,
-         roles=[Role.user]),
+         roles=[Role.user]
+         ),
     User(id=uuid4(),
          first_name="James",
          last_name="Jones",
          gender=Gender.male,
          roles=[Role.admin]
-    )
+         )
 ]
 
 
@@ -59,7 +60,7 @@ async def delete_user(user_id: UUID):
     for user in db:
         if user.id == user_id:
             db.remove(user)
-            return f'{user_id} has been removed'
+            return f"{user_id} has been removed"
     raise HTTPException(
         status_code=404,
         detail=f"user with id: {user_id} does not exist"
