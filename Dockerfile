@@ -1,7 +1,7 @@
 # Use the pre-built tiangolo/uvicorn-gunicorn-fastapi image
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.8
 
-LABEL authors="emmanuel"
+LABEL authors="Emmanuel"
 
 # Set working directory and copy necessary files
 WORKDIR /app
