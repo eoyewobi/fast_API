@@ -1,8 +1,8 @@
-from fastapi import FastAPI, HTTPException
-import random
-from models import User, Gender, Role, ChangeUser
-from typing import List
 from uuid import uuid4, UUID
+from typing import List
+import random
+from fastapi import FastAPI, HTTPException
+from models import User, Gender, Role, ChangeUser
 
 app = FastAPI()
 
@@ -69,11 +69,11 @@ async def delete_user(user_id: UUID):
 
 @app.get('/api/v1/random')
 async def get_random():
-    rn:int = random.randint(0,100)
-    return {'number':rn, 'limit': 100}
+    random_n:int = random.randint(0,100)
+    return {'number':random_n, 'limit': 100}
 
 
 @app.get('/api/v1/random/{limit}')
 async def get_random_limit(limit:int):
-    rn:int = random.randint(0,limit)
-    return {'number':rn, 'limit': limit}
+    random_n:int = random.randint(0,limit)
+    return {'number':random_n, 'limit': limit}
