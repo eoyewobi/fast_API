@@ -1,17 +1,17 @@
 from typing import Optional, List
 from uuid import UUID, uuid4
-from pydantic import BaseModel
 from enum import Enum
+from pydantic import BaseModel
 
 
 class Gender(str, Enum):
-    male = "male"
-    female = "female"
+    MALE = "male"
+    FEMALE = "female"
 
 
 class Role(str, Enum):
-    admin = "admin"
-    user = "user"
+    ADMIN = "admin"
+    USER = "user"
 
 
 class User(BaseModel):
