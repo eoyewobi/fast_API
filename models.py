@@ -5,16 +5,25 @@ from pydantic import BaseModel
 
 
 class Gender(str, Enum):
+    """
+    class for gender api model
+    """
     MALE = "male"
     FEMALE = "female"
 
 
 class Role(str, Enum):
+    """
+    class for roles in api model
+    """
     ADMIN = "admin"
     USER = "user"
 
 
 class User(BaseModel):
+    """
+    class for user fields in api
+    """
     id: Optional[UUID] = uuid4()
     first_name: str
     last_name: str
@@ -23,6 +32,9 @@ class User(BaseModel):
 
 
 class ChangeUser(BaseModel):
+    """
+    class to update user fields in api
+    """
     first_name: Optional[str]
     last_name: Optional[str]
     roles: Optional[List[Role]]
