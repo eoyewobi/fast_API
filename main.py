@@ -10,14 +10,14 @@ db: List[User] = [
     User(id=uuid4(),
          first_name="Mila",
          last_name="Py",
-         gender=Gender.female,
-         roles=[Role.user]
+         gender=Gender.FEMALE,
+         roles=[Role.USER]
          ),
     User(id=uuid4(),
          first_name="James",
          last_name="Jones",
-         gender=Gender.male,
-         roles=[Role.admin]
+         gender=Gender.MALE,
+         roles=[Role.ADMIN]
          )
 ]
 
