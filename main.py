@@ -26,7 +26,6 @@ db: List[User] = [
 async def root():
     """
     set the root page message for the api
-    :return:
     """
     return {'example': 'this is an example', 'data': 100}
 
